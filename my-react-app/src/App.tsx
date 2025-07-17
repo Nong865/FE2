@@ -1,18 +1,20 @@
-import React from 'react';
-import ProductList from './ProductList';
-import CategoryList from './CategoryList';
-import BrandList from './BrandList';
-import OrderList from './OrderList';
+import ProductList from "./components/ProductList";
+import CategoryList from "./components/CategoryList";
+import UserList from "./components/UserList";
+import OrderList from "./components/OrderList";
+import BrandList from "./components/BrandList";
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <ProductList />
-      <CategoryList />
-      <BrandList />
-      <OrderList />
-    </div>
-  );
+  <div>
+    <ProductList />;
+    <CategoryList />
+    <UserList />
+    <OrderList />
+    <BrandList />
+  </div> 
+  )
 }
 
 export default App;
