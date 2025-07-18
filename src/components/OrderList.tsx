@@ -1,14 +1,14 @@
 import { useQuery } from "@tanstack/react-query";
 import { Table} from "antd";
 
-function CategoryList(){
-const fetchCategories = async () => {
-    const res = await fetch("http://localhost:3001/categories")
+function OrderList(){
+const fetchOrders = async () => {
+    const res = await fetch("http://localhost:3001/orders")
     return res.json();
 }
 const {data, isLoading} = useQuery({
-  queryKey: ["categories"],
-    queryFn: fetchCategories,
+  queryKey: ["orders"],
+    queryFn: fetchOrders,
 });
 const columns = [
       {
@@ -16,12 +16,11 @@ const columns = [
       dataIndex: "id",
     },
     {
-      title: "Tên sản phẩm",
-      dataIndex: "name",
+      title: "Tên Đơn Hàng",
+      dataIndex: "customerName",
     },
-    {
-      title: "Mô tả",
-      dataIndex: "description",
+    { title: "Tổng",
+      dataIndex: "total",   
     },
     {
       title: "Trạng thái",
@@ -30,7 +29,7 @@ const columns = [
 ];
 return (
     <div>
-      <h2>Danh sách sản phẩm</h2>
+      <h2>Danh sách đơn hàng</h2>
       <Table
         dataSource={data}
         columns={columns}
@@ -41,4 +40,4 @@ return (
   );
 };
 
-export default CategoryList;
+export default OrderList;
