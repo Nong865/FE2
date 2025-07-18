@@ -44,5 +44,87 @@
       "description": "Tablet đa dạng",
       "status": "active"
     }
+  ],
+  "users": [
+    {
+    "id": 1,
+    "name": "Nguyễn Văn A",
+    "email": "vana@example.com",
+    "role": "Admin"
+  },
+  {
+    "id": 2,
+    "name": "Trần Thị B",
+    "email": "thib@example.com",
+    "role": "Customer"
+  },
+  {
+    "id": 3,
+    "name": "Lê Văn C",
+    "email": "levanc@example.com",
+    "role": "Staff"
+  },
+  {
+    "id": 4,
+    "name": "Phạm Thị D",
+    "email": "thid@example.com",
+    "role": "Customer"
+  }
+  ],
+  "orders": [
+    {
+    "id": 101,
+    "customerName": "Nguyễn Văn A",
+    "total": 1250000,
+    "status": "Pending"
+  },
+  {
+    "id": 102,
+    "customerName": "Trần Thị B",
+    "total": 2300000,
+    "status": "Delivered"
+  },
+  {
+    "id": 103,
+    "customerName": "Lê Văn C",
+    "total": 780000,
+    "status": "Shipped"
+  },
+  {
+    "id": 104,
+    "customerName": "Phạm Thị D",
+    "total": 990000,
+    "status": "Cancelled"
+  }
+  ],
+  "brands": [
+    {
+    "id": 1,
+    "name": "Nike",
+    "origin": "USA",
+    "established": 1964,
+    "status": "Active"
+  },
+  {
+    "id": 2,
+    "name": "Adidas",
+    "origin": "Germany",
+    "established": 1949,
+    "status": "Active"
+  },
+  {
+    "id": 3,
+    "name": "Puma",
+    "origin": "Germany",
+    "established": 1948,
+    "status": "Active"
+  },
+  {
+    "id": 4,
+    "name": "Bitis",
+    "origin": "Vietnam",
+    "established": 1982,
+    "status": "Inactive"
+  }
   ]
 }
