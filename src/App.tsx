@@ -5,13 +5,14 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import BrandList from "./components/BrandList";
 import OrderList from "./components/OrderList";
 import UserList from "./components/UserList";
+import ProductDetail from "./components/ProductDetail";
 
 
 function App() {
   const router = createBrowserRouter([
-    {
-      path:"/",
-      element: <h1>Trang chủ</h1>
+     {
+      path: "/",
+      element: <ProductList />,
     },
     {
       path:"/products",
@@ -20,6 +21,10 @@ function App() {
     {
       path:"/categories",
       element: <CategoryList/>
+    },
+    {
+      path: "/product/detail/:productID",
+      element:  <ProductDetail/>
     },
     {
       path:"/brands",

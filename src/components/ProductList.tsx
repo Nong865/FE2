@@ -1,77 +1,71 @@
-import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { Table, Button, Spin, Image } from "antd";
+import { Image, Table } from "antd";
+import { Link, useSearchParams } from "react-router-dom";
+import Header from "./Header";
 
-type Product = {
-  id: number;
+interface Product  {
+  id: string;
   name: string;
   price: number;
-  image: string;
-};
-
-async function fetchProducts(): Promise<Product[]> {
-  const response = await fetch("http://localhost:3001/products");
-  return response.json();
-}
-
+  };
 function ProductList() {
-  const [page, setPage] = useState(1);
-  const { data, isLoading, error } = useQuery({
-    queryKey: ["products", page],
+  const [searchParams] = useSearchParams();
+
+  const name = searchParams.get("name");
+
+  const fetchProducts = async () => {
+    const res = await fetch(`http://localhost:3001/products?name_like=${name || ''}`);
+    return res.json();
+  };
+
+  const {data, isLoading, error} = useQuery({
+    queryKey: ["products"],
     queryFn: fetchProducts,
   });
-
   const columns = [
     {
       title: "ID",
       dataIndex: "id",
-      key: "id",
+      render: (id: number) => {
+         return <Link to={`/product/detail/${id}`}>ID: {id}</Link>;
+      }
     },
     {
       title: "Name",
       dataIndex: "name",
-      key: "name",
     },
     {
       title: "Category",
       dataIndex: "category",
-      key: "category",
     },
     {
       title: "Price",
       dataIndex: "price",
-      render: (price: number) => `$${price.toFixed(2)}`,
+      sorter: (a: Product, b: Product) => a.price - b.price,
     },
     {
       title: "Image",
       dataIndex: "image",
-      render: (src: string) => {
-        return  <Image src={src}  width={60} height={60} />
-      } 
+      render: (src: string, recourd: Product, index: number) => {
+        return <Image src={src} width={300} alt={recourd.name} />;
+      },
     },
+    {
+      title: "Description"
+    }
   ];
 
   return (
     <div>
-      <h2>Danh sách sản phẩm</h2>
-      {isLoading && <Spin />}
+      <Header />
       {error && <p>Error: {error.message}</p>}
-      {!isLoading && !error && (
-        <>
-          <Table
-            dataSource={data}
-            columns={columns}
-            rowKey="id"
-            pagination={false}
-          />
-          <Button
-            onClick={() => setPage((prev) => prev + 1)}
-            style={{ marginTop: "16px" }}
-          >
-            Load More
-          </Button>
-        </>
-      )}
+      <Table 
+        dataSource={data}
+        columns={columns}
+        rowKey={"id"}
+        loading={isLoading}
+        pagination={{pageSize: 5}}      
+      />
     </div>
   );
 }
