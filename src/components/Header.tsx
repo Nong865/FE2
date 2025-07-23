@@ -3,6 +3,7 @@ import {
   HomeOutlined,
   ShopFilled,
   UnorderedListOutlined,
+  UserOutlined,
 } from "@ant-design/icons";
 import type { MenuProps } from "antd";
 import { Menu } from "antd";
@@ -20,6 +21,16 @@ const items: MenuItem[] = [
     label: "Products",
     key: "/products",
     icon: <ShopFilled />,
+  },
+  {
+    label: "Create Product",
+    key: "/product/create",
+    icon: <ShopFilled />,
+  },
+  {
+    label: "Users",
+    key: "/users",
+    icon: <UserOutlined />,
   },
   {
     label: "Categories",

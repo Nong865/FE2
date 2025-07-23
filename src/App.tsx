@@ -6,6 +6,7 @@ import BrandList from "./components/BrandList";
 import OrderList from "./components/OrderList";
 import UserList from "./components/UserList";
 import ProductDetail from "./components/ProductDetail";
+import ProductCreate from "./components/ProductCreate";
 
 
 function App() {
@@ -17,6 +18,10 @@ function App() {
     {
       path:"/products",
       element: <ProductList/>
+    },
+    {
+      path:"/product/create",
+      element: <ProductCreate/>
     },
     {
       path:"/categories",
