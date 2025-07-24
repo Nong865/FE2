@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { Table } from "antd";
+import Header from "./Header";
 
 function CategoryList() {
   const fetchCategories = async () => {
@@ -14,18 +15,22 @@ function CategoryList() {
 
   const columns = [
     {
-      title: "Số thứ tự",
+      title: "So thu tu",
       dataIndex: "id",
     },
     {
-      title: "Tên danh mục",
+      title: "Ten danh muc",
       dataIndex: "name",
+    },
+    {
+      title: "Image",
+      dataIndex: "image",
     },
   ];
 
   return (
     <div>
-      <h2 style={{color: "black"}}>Danh mục</h2>
+    
       <Table
         dataSource={data}
         columns={columns}

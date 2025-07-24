@@ -1,0 +1,124 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "iPhone 15",
+      "price": 1200,
+      "categoryId": 1,
+      "brandId": 1,
+      "image": "https://apple.ngocnguyen.vn/cdn/images/202409/goods_img/iphone-15-pro-max-chinh-hang--like-new-99-P15597-1726997326779.png",
+      "description": "Latest iPhone with advanced features and sleek design."
+    },
+    {
+      "id": "2",
+      "name": "MacBook Air",
+      "price": 1500,
+      "categoryId": 1,
+      "brandId": 1,
+      "image": "https://1pro.vn/wp-content/uploads/2024/12/macbook-pro-14-m4-600x600.jpeg",
+      "description": "Lightweight and powerful laptop for professionals."
+    },
+    {
+      "id": "3",
+      "name": "Samsung Galaxy S23",
+      "price": 1000,
+      "categoryId": 1,
+      "brandId": 2,
+      "image": "https://cdn.tgdd.vn/Products/Images/42/297930/samsung-galaxy-s23-5g-128gb-xanh-600x600.jpg",
+      "description": "High-end smartphone with stunning display and camera."
+    },
+    {
+      "id": "4",
+      "name": "Nike Air Max",
+      "price": 200,
+      "categoryId": 2,
+      "brandId": null,
+      "image": "https://example.com/nike-air-max.jpg",
+      "description": "Comfortable and stylish running shoes."
+    },
+    {
+      "id": "5",
+      "name": "Sony WH-1000XM4",
+      "price": 350,
+      "categoryId": 1,
+      "brandId": null,
+      "image": "https://example.com/sony-wh-1000xm4.jpg",
+      "description": "Noise-cancelling headphones with superior sound quality."
+    },
+    {
+      "id": "563e",
+      "name": "Bùi Nhật Long",
+      "price": 8,
+      "image": "anh 3"
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Electronics",
+      "image": "https://example.com/electronics.jpg"
+    },
+    {
+      "id": "2",
+      "name": "Clothing",
+      "image": "https://example.com/clothing.jpg"
+    },
+    {
+      "id": "3",
+      "name": "Home Appliances",
+      "image": "https://example.com/home-appliances.jpg"
+    },
+    {
+      "id": "4",
+      "name": "Books",
+      "image": "https://example.com/books.jpg"
+    },
+    {
+      "id": "5",
+      "name": "Sports",
+      "image": "https://example.com/sports.jpg"
+    }
+  ],
+  "brands": [
+    {
+      "id": "1",
+      "name": "Apple"
+    },
+    {
+      "id": "2",
+      "name": "Samsung"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "123456",
+      "role": "admin"
+    },
+    {
+      "id": "2",
+      "username": "user1",
+      "password": "password",
+      "role": "user"
+    }
+  ],
+  "orders": [
+    {
+      "id": "1",
+      "userId": 2,
+      "date": "2025-07-22",
+      "items": [
+        {
+          "productId": 1,
+          "quantity": 1
+        },
+        {
+          "productId": 2,
+          "quantity": 2
+        }
+      ],
+      "total": 4200
+    }
+  ]
+}
